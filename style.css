@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #1f2933;
+  color: #f9fafb;
+  padding: 2.7rem 0;
+  padding-left: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative; /* necesario para el efecto */
+  overflow: hidden;   /* evita que la animación se salga */
+
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff9900,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0066ff,
+    #cc00ff,
+    #ff0099,
+    #ff0000
+  );
+  opacity: 0.30; /* controla qué tan fuerte se ve */
+  animation: fireworks 8s linear infinite;
+  pointer-events: none; /* no afecta clics ni texto */
+}
+@keyframes fireworks {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}@keyframes fireworks {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin-bottom: 3rem;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+.card h2 {
+  margin-bottom: 0.75rem;
+}
+
+.card p,
+.card ul {
+  font-size: 0.98rem;
+}
+
+.card ul {
+  margin-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+footer {
+  background-color: #111827;
+  color: #9ca3af;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Fotos del header */
+.header-fotos {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  width: 200px;     /* tamaño ajustado */
+  height: 200px;    /* tamaño ajustado */
+  overflow: hidden;
+  z-index: 10;     /* asegura que quede encima del menú */
+}
+
+.header-fotos .foto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: cambioFotos 20s infinite;
+}
+
+/* Foto 1 empieza visible */
+.header-fotos .foto-1 {
+  animation-delay: 0s;
+}
+
+/* Foto 2 empieza después */
+.header-fotos .foto-2 {
+  animation-delay: 10s;
+}
+
+/* Animación de fade */
+@keyframes cambioFotos {
+  0% { opacity: 1; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Fondo de la biografía con textura carcelaria */
+#bio {
+  background-image: url("img/paredprince2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: rgba(255, 255, 255, 0.05);
+  background-blend-mode: lighten;
+
+  padding: 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  color:  #f5f5f5;
+
+
+}
+
+
+
